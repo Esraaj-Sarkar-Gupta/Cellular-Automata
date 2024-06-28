@@ -9,7 +9,7 @@ mpl.use('PS')
 print('> [Warning]: MatPlotLib will use PS backend instead of AGG backend. Plots may not be displayed within console. They will be saved directly.')
 # System parameters:
 
-N = 81 # Number of cells
+N = 21 # Number of cells
 if N % 2 == 0: # Check if N is even
     print("> [Warning]: N is an even number. You may generate eronious results!")
           
@@ -68,7 +68,9 @@ else:
         print(cells[k])
     
 # Plotting resultant data:
-   
+ 
+s_time = tm.time()
+
 R = mpl.patches.Rectangle 
 plt.figure()    
 fig , ax = plt.subplots()
@@ -88,10 +90,13 @@ ax.set_xlim(0, J + 1)
 ax.set_ylim(N , 0)   
 plt.grid(True)  
 plt.show()
+
+e_time = tm.time()
+
 print('> Plot generated')
 plt.savefig("CellularAutomata.ps" , format = 'ps')
 print("> Plot .ps file saved")
-        
+print(f"> Figure plotted in time: {e_time - s_time:.3f} seconds")
     
     
 
