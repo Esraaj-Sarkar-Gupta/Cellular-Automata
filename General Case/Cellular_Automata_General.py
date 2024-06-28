@@ -14,8 +14,28 @@ if N % 2 == 0: # Check if N is even
     print("> [Warning]: N is an even number. You may generate eronious results!")
 
           
-def rule(cell_number , row): # Define system rule ((UNDEFINED))
-    print("> [Error]: Rule function has not been defined."
+def rule(cell_number , row): # Define system rule ((UNDEFINED)):
+    
+    # Aquire data regarding immediate neighbour cells:
+        
+    if cell_number != 0: # Selected cell is not the first cell
+        if cells[row][cell_number - 1] == 1: # If previous cell is 1, then condition True
+            R_Prev = True
+        else:
+            R_Prev = False # If the previous cell is 0, then condition True
+    else:
+        R_Prev = False # If cell is first cell, previous cell is automatically 0 and False
+        
+    if cell_number !=  N - 1: # If the selected cell isn't the last cell
+        if cells[row][cell_number + 1] == 1: # If the next cell is 1, then condition True
+            R_Nxt = True
+        else:
+            R_Nxt = False # If the next cell is 0, then condition False
+    else:
+        R_Nxt = False # If it is the last cell, next cell is automatically the  0, condition False
+        
+    print("> [Error]: Rule function has not been defined.")
+    
     # Must return True to colour a cell and False to discolour a square
   
 print("> System rule defined")          
