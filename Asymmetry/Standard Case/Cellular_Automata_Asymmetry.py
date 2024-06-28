@@ -9,7 +9,7 @@ mpl.use('PS')
 print('> [Warning]: MatPlotLib will use PS backend instead of AGG backend. Plots may not be displayed within console. They will be saved directly.')
 # System parameters:
 
-N = 1000 + 1 # Number of cell
+N = 500 + 1 # Number of cell
 if N % 2 == 0: # Check if N is even
     print("> [Warning]: N is an even number. You may generate eronious results!")
           
@@ -41,9 +41,7 @@ def rule(cell_number , row): # Define system rule ((UNDEFINED)):
         
     if R_Nxt ^ R_Prev ^ R_This: # XOR logic - returns true iff only one of the triad is coloured
         return True
-    elif R_Nxt == True and R_Prev == True and R_This == True: # If all three are coloured, then return false, in preparation of the next loigic statement
-        return False
-    elif R_This == True and R_Nxt == True: # If the current and next cell are coloured, current cell will remain coloured - directional bias leading to asymmetry
+    elif R_This == True and R_Nxt == True and R_Prev == False: # If the current and next cell are coloured, current cell will remain coloured - directional bias leading to asymmetry
         return True
     else:
         return False
