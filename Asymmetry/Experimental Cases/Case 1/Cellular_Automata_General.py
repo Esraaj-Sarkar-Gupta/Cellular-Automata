@@ -33,11 +33,6 @@ def rule(cell_number , row): # Define system rule ((UNDEFINED)):
     else:
         R_Nxt = False # If it is the last cell, next cell is automatically the  0, condition False
         
-    if cells[row][cell_number] == True:  # Check if the current cell is coloured or not and store that data
-        R_This = True
-    else:
-        R_This = False
-        
     print("> [Error]: Rule function has not been defined.")
     
     # Must return True to colour a cell and False to discolour a square
