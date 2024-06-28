@@ -49,7 +49,7 @@ for i in range(N):
 cells = [Cell_0] # Inckude initial row (Row 0) in the cells list
 # Generate cells using the system rule
 
-for j in range(N): # Loop for each row:
+for j in range(int((N + 1) /2)): # Loop for each row:
     cell_index = []
     cells.append(cell_index)
     for i in range(N): # Loop for each cell:
@@ -58,12 +58,14 @@ for j in range(N): # Loop for each row:
             
         else:
             cells[j + 1].append(0)
+
+# Displaying results:
             
-            
-print("> Printing Result: ")
 if len(cells[0]) > 10 :
-    print("> Result is too large to display in console. Results will be plotted")
+    print("> Result is too large to display in console. Results will be plotted.")
+    print("> Plotting results...")
 else:
+    print("> Printing Result: ")
     for k in range(len(cells)):
         print(cells[k])
     
@@ -87,7 +89,7 @@ for I in range(len(cells)): # Loop for every row
         ax.add_patch(r)
         
 ax.set_xlim(0, J + 1)  
-ax.set_ylim(N , 0)   
+ax.set_ylim(int((N + 1) /2) , 0)   
 plt.grid(True)  
 plt.show()
 
