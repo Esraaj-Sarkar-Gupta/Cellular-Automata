@@ -12,11 +12,10 @@ print('> [Warning]: MatPlotLib will use PS backend instead of AGG backend. Plots
 N = 81 # Number of cells
 if N % 2 == 0: # Check if N is even
     print("> [Warning]: N is an even number. You may generate eronious results!")
-
           
 def rule(cell_number , row): # Define system rule ((UNDEFINED)):
     
-    # Aquire data regarding immediate neighbour cells:
+    # Acquire data regarding immediate neighbour cells:
         
     if cell_number != 0: # Selected cell is not the first cell
         if cells[row][cell_number - 1] == 1: # If previous cell is 1, then condition True
